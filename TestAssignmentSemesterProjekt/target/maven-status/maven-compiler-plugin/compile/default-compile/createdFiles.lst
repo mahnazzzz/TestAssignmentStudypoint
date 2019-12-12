@@ -1,0 +1,14 @@
+entity\Course.class
+database\ReallyDataSource.class
+database\CourseMapper.class
+database\LoginMapper.class
+database\TestDataSource.class
+interfaces\TeacherFunctions.class
+entity\Student.class
+entity\Semester.class
+entity\User.class
+database\DatabaseConnector.class
+database\MainMapper.class
+entity\Teacher.class
+interfaces\semesterFunctions.class
+database\StudentMapper.class

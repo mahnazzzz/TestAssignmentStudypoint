@@ -1,0 +1,7 @@
+junit\TestCourseMapper.class
+junit\TestStudentMapper.class
+junit\RunCucumberJunit.class
+junit\TestMain.class
+integration\TestMainMapper.class
+integration\TestMockDatabase.class
+Testdatabase\TestDatabaseMapper.class
