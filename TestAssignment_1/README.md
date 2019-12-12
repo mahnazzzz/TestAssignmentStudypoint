@@ -1,7 +1,7 @@
 # Assignment 1
 java og junittest
 
-you can find task discription  : (her)[https://github.com/datsoftlyngby/soft2019spring-test/blob/master/Assignments/01%20Test%20cases%20assignment.pdf]
+you can find task discription  : (https://github.com/datsoftlyngby/soft2019spring-test/blob/master/Assignments/01%20Test%20cases%20assignment.pdf)[her]
 
 localTime is used : https://docs.oracle.com/javase/8/docs/api/java/time/LocalDate.html
 
