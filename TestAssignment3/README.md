@@ -24,10 +24,10 @@ Configure the JaCoCo Maven plugin by following these steps:
 - Add the JaCoCo Maven plugin to the plugins section of our POM file.
 - Configure the code coverage report for unit tests.
 - Configure the code coverage report for integration tests.
-/*
+*/
 <plugin>
     <groupId>org.jacoco</groupId>
     <artifactId>jacoco-maven-plugin</artifactId>
     <version>0.7.5.201505241946</version>
 </plugin>
-*/
+/*
