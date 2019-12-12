@@ -5,7 +5,7 @@ Include some code smells:
 
 ## Class-level smells:
 
-.Large class: a class that has grown too large.
+- Large class: a class that has grown too large.
 .Feature envy: a class that uses methods of another class excessively.
 .Lazy class / freeloader: a class that does too little.
 .Too many parameters: a long list of parameters is hard to read
