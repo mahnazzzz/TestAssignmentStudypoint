@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>Order.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">PizzaMarioTestAssignment_6</a> &gt; <a href="index.source.html" class="el_package">default</a> &gt; <span class="el_source">Order.java</span></div><h1>Order.java</h1><pre class="source lang-java linenums">
+import java.util.ArrayList;
+
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+
+/**
+ *
+ * @author Bruger
+ */
+public class Order {
+    int id; 
+    String name;
+    String description;
+    int price;
+    Order order;
+    ArrayList&lt;Order&gt; orders ;
+
+<span class="nc" id="L22">    public Order(String name, String description, int price) {</span>
+<span class="nc" id="L23">        this.name = name;</span>
+<span class="nc" id="L24">        this.description = description;</span>
+<span class="nc" id="L25">        this.price = price;</span>
+<span class="nc" id="L26">    }</span>
+
+<span class="nc" id="L28">    public Order(int id, String name, String description, int price) {</span>
+<span class="nc" id="L29">        this.id = id;</span>
+<span class="nc" id="L30">        this.name = name;</span>
+<span class="nc" id="L31">        this.description = description;</span>
+<span class="nc" id="L32">        this.price = price;</span>
+       
+<span class="nc" id="L34">    }</span>
+public ArrayList&lt;Order&gt; makeorders(Order order){
+    
+<span class="nc" id="L37">   orders.add(order);</span>
+<span class="nc" id="L38">   return orders;</span>
+  
+}
+ public ArrayList&lt;Order&gt; deleteOrder(Order order){
+    
+<span class="nc" id="L43">   orders.remove(order);</span>
+<span class="nc" id="L44">   return orders;</span>
+  
+}   
+
+    public int getId() {
+<span class="nc" id="L49">        return id;</span>
+    }
+
+    public void setId(int id) {
+<span class="nc" id="L53">        this.id = id;</span>
+<span class="nc" id="L54">    }</span>
+
+    public String getName() {
+<span class="nc" id="L57">        return name;</span>
+    }
+
+    public void setName(String name) {
+<span class="nc" id="L61">        this.name = name;</span>
+<span class="nc" id="L62">    }</span>
+
+    public String getDescription() {
+<span class="nc" id="L65">        return description;</span>
+    }
+
+    public void setDescription(String description) {
+<span class="nc" id="L69">        this.description = description;</span>
+<span class="nc" id="L70">    }</span>
+
+    public int getPrice() {
+<span class="nc" id="L73">        return price;</span>
+    }
+
+    public void setPrice(int price) {
+<span class="nc" id="L77">        this.price = price;</span>
+<span class="nc" id="L78">    }</span>
+
+    
+    public Order makeorder(){
+<span class="nc" id="L82">        return order;</span>
+    }
+    
+    @Override
+    public String toString() {
+<span class="nc" id="L87">        return &quot;Order{&quot; + &quot;id=&quot; + id + &quot;, name=&quot; + name + &quot;, description=&quot; + description + &quot;, price=&quot; + price + '}';</span>
+    }
+    
+    
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.3.201901230119</span></div></body></html>

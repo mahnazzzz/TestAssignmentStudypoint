@@ -5,22 +5,54 @@
  */
 package mahnaz.testassignment_4;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author Bruger
  */
 public class Customer {
+
+    public Customer(String name, Account acount) {
+        this.name = name;
+        this.acount = acount;
+    }
     int id;
     String name;
     Account acount ;
     CreditCard creditCart;
     boolean coupon = false;
-    
-    
-     public Customer(String name, Account acount) {
+   public  ArrayList<Customer> customers;
+
+    public ArrayList<Customer> getCustomers() {
+        return customers;
+    }
+
+    public void setCustomers(ArrayList<Customer> customers) {
+        this.customers = customers;
+    }
+
+    public Customer(int id, String name, CreditCard creditCart, boolean coupon) {
+        this.id = id;
         this.name = name;
-        this.acount = acount;
-        this.coupon = false;    }
+        this.creditCart = creditCart;
+        this.coupon = coupon;
+    }
+
+    public boolean isCoupon() {
+        return coupon;
+    }
+
+    public void setCoupon(boolean coupon) {
+        this.coupon = coupon;
+    }
+
+   public ArrayList<Customer> addCustomer(Customer c){
+       customers.add(c);
+       return customers;
+   }
+
+    
 
     public int getId() {
         return id;
@@ -46,7 +78,7 @@ public class Customer {
         this.acount = acount;
     }
 
-    public CreditCard getCreditCard() {
+    public CreditCard getCreditCart() {
         return creditCart;
     }
 
@@ -54,38 +86,15 @@ public class Customer {
         this.creditCart = creditCart;
     }
 
-    public boolean isCoupon() {
-        return coupon;
+    @Override
+    public String toString() {
+        return "Customer{" + "id=" + id + ", name=" + name + ", acount=" + acount + ", creditCart=" + creditCart + ", coupon=" + coupon + '}';
     }
 
-    public void setCoupon(boolean coupon) {
-        this.coupon = coupon;
-    }
     
     
-    public void purchaseSCustomer() {
-        if (getCreditCard().cardISValid == false && coupon ==false){
-            System.out.println("15% discounts today for new customer");
-            creditCart = new CreditCard (0.15, false);
-            setAcount(new Account(0.00));
-            return;
-        }
-        else if (getCreditCard().cardISValid == true && coupon == false) {
-            System.out.println("valid credit card. 10% discount. ");
-            creditCart = new CreditCard(0.10, false);
-            return;
-        }
-        else  if (getCreditCard().cardISValid == true && coupon == true) {
-            System.out.println("valid credit card. 10% discount. Added 20% with coupon ");
-            creditCart = new CreditCard(30, false);
-            return;
-        }
-        else if (getCreditCard().cardISValid== false && coupon == true) {
-            System.out.println("you have a coupon, you can get 20% off today (but it can't be used with the 'new customer' discount ");
-            creditCart = new CreditCard(20, false);
-        }
-
-    }
+   
+ 
     
     
 }

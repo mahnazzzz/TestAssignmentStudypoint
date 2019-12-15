@@ -11,11 +11,28 @@ package mahnaz.testassignment_4;
  */
 public class Account {
     
+    
      private Double balance;
+     int CustomerNr;
 
     public Account(Double balance) {
         this.balance = balance;
     }
+    
+      public Account(Double balance, int CustomerNr) {
+        this.balance = balance;
+        this.CustomerNr = CustomerNr;
+    }
+
+    public int getCustomerNr() {
+        return CustomerNr;
+    }
+
+    public void setCustomerNr(int CustomerNr) {
+        this.CustomerNr = CustomerNr;
+    }
+
+  
 
     public Double getBalance() {
         return balance;
@@ -26,18 +43,6 @@ public class Account {
     }
      
     
-    public double Monthly_interest_rate(){
-         if (getBalance() >= 0 && getBalance() <= 100) {
-            return 0.03;
-        }
-         else if (getBalance() > 100 && getBalance() <= 1000) {
-            return 0.05;
-        }
-         else if(getBalance() > 1000){
-            return 0.07;
-        }
-        return 0.0;
-    }
-
+   
     
 }
