@@ -2,6 +2,13 @@
 
 You can finde assignment [her](https://github.com/datsoftlyngby/soft2019spring-test/blob/master/Assignments/06%20TDD%20assignment.pdf)
 
+Getting into the TDD does have some benefits:
+
+- This will make sure we don't forget to write the test
+- This allows the programmer to know exactly what their code should output
+- Writing a test before each code increases the test coverage of the program to 5%, thus reducing the likelihood of an error in future development.
+- Test-driven development make possible to see whether each piece of code written meets expectations or whether new code is a problem with older software components. Or not.
+
 For this assignment you need tomcat server, you can download it [her](https://tomcat.apache.org/download-80.cgi). you will also need a chromedriver (I use version 72) which you can download [her](http://chromedriver.chromium.org/). 
 
 ## What the test do:
