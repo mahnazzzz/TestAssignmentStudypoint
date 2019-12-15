@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>Course.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">SemesterProjectTestM</a> &gt; <a href="index.source.html" class="el_package">entity</a> &gt; <span class="el_source">Course.java</span></div><h1>Course.java</h1><pre class="source lang-java linenums">package entity;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class Course {
+
+    private int id;
+    private String subject;
+    private Teacher teacher;
+    private int semesterId;
+    private List&lt;Student&gt; students;
+
+<span class="nc" id="L14">    public Course() {</span>
+<span class="nc" id="L15">    }</span>
+
+<span class="nc" id="L17">    public Course(int id, String subject, Teacher teacher, int semesterId, List&lt;Student&gt; students) {</span>
+<span class="nc" id="L18">        this.id = id;</span>
+<span class="nc" id="L19">        this.subject = subject;</span>
+<span class="nc" id="L20">        this.teacher = teacher;</span>
+<span class="nc" id="L21">        this.semesterId = semesterId;</span>
+<span class="nc" id="L22">        this.students = students;</span>
+<span class="nc" id="L23">    }</span>
+    
+<span class="fc" id="L25">    public Course(int id, String subject, Teacher teacher) {</span>
+<span class="fc" id="L26">        this.id = id;</span>
+<span class="fc" id="L27">        this.subject = subject;</span>
+<span class="fc" id="L28">        this.teacher = teacher;</span>
+<span class="fc" id="L29">        students = new ArrayList();</span>
+<span class="fc" id="L30">    }</span>
+
+    public int getId() {
+<span class="fc" id="L33">        return id;</span>
+    }
+
+    public void setId(int id) {
+<span class="nc" id="L37">        this.id = id;</span>
+<span class="nc" id="L38">    }</span>
+
+    public String getSubject() {
+<span class="nc" id="L41">        return subject;</span>
+    }
+
+    public void setSubject(String subject) {
+<span class="nc" id="L45">        this.subject = subject;</span>
+<span class="nc" id="L46">    }</span>
+
+    public Teacher getTeacher() {
+<span class="nc" id="L49">        return teacher;</span>
+    }
+
+    public void setTeacher(Teacher teacher) {
+<span class="nc" id="L53">        this.teacher = teacher;</span>
+<span class="nc" id="L54">    }</span>
+
+    public List&lt;Student&gt; getStudents() {
+<span class="nc" id="L57">        return students;</span>
+    }
+
+    public void setStudents(List&lt;Student&gt; students) {
+<span class="nc" id="L61">        this.students = students;</span>
+<span class="nc" id="L62">    }</span>
+
+    public int getSemesterId() {
+<span class="nc" id="L65">        return semesterId;</span>
+    }
+
+    public void setSemesterId(int semesterId) {
+<span class="nc" id="L69">        this.semesterId = semesterId;</span>
+<span class="nc" id="L70">    }</span>
+
+    @Override
+    public String toString() {
+<span class="nc" id="L74">        return &quot;Course{&quot; + &quot;id=&quot; + id + &quot;, subject=&quot; + subject + &quot;, teacher=&quot; + teacher + &quot;, semesterId=&quot; + semesterId + &quot;, students=&quot; + students + '}';</span>
+    }
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.2.201808211720</span></div></body></html>

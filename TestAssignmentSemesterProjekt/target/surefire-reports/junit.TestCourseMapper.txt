@@ -1,4 +1,10 @@
 -------------------------------------------------------------------------------
 Test set: junit.TestCourseMapper
 -------------------------------------------------------------------------------
-Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.525 sec - in junit.TestCourseMapper
+Tests run: 3, Failures: 0, Errors: 2, Skipped: 0, Time elapsed: 0.52 sec <<< FAILURE! - in junit.TestCourseMapper
+getTeacherById()(TestCourseMapper)  Time elapsed: 0.502 sec  <<< ERROR!
+java.lang.NullPointerException
+
+getStudentById()(TestCourseMapper)  Time elapsed: 0.017 sec  <<< ERROR!
+java.lang.NullPointerException
+

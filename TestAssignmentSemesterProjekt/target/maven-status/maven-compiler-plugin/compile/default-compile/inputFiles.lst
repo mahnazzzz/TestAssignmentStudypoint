@@ -1,14 +1,14 @@
-C:\Users\Bruger\Documents\NetBeansProjects\SemesterProjectTestM\src\main\java\entity\Course.java
-C:\Users\Bruger\Documents\NetBeansProjects\SemesterProjectTestM\src\main\java\interfaces\semesterFunctions.java
-C:\Users\Bruger\Documents\NetBeansProjects\SemesterProjectTestM\src\main\java\database\StudentMapper.java
-C:\Users\Bruger\Documents\NetBeansProjects\SemesterProjectTestM\src\main\java\entity\Semester.java
-C:\Users\Bruger\Documents\NetBeansProjects\SemesterProjectTestM\src\main\java\database\DatabaseConnector.java
-C:\Users\Bruger\Documents\NetBeansProjects\SemesterProjectTestM\src\main\java\entity\User.java
-C:\Users\Bruger\Documents\NetBeansProjects\SemesterProjectTestM\src\main\java\database\LoginMapper.java
-C:\Users\Bruger\Documents\NetBeansProjects\SemesterProjectTestM\src\main\java\interfaces\TeacherFunctions.java
-C:\Users\Bruger\Documents\NetBeansProjects\SemesterProjectTestM\src\main\java\database\ReallyDataSource.java
-C:\Users\Bruger\Documents\NetBeansProjects\SemesterProjectTestM\src\main\java\database\TestDataSource.java
-C:\Users\Bruger\Documents\NetBeansProjects\SemesterProjectTestM\src\main\java\entity\Student.java
-C:\Users\Bruger\Documents\NetBeansProjects\SemesterProjectTestM\src\main\java\entity\Teacher.java
-C:\Users\Bruger\Documents\NetBeansProjects\SemesterProjectTestM\src\main\java\database\CourseMapper.java
-C:\Users\Bruger\Documents\NetBeansProjects\SemesterProjectTestM\src\main\java\database\MainMapper.java
+C:\Users\Bruger\Desktop\studypoint test opgaver\TestAssignmentSemesterProjekt\src\main\java\database\ReallyDataSource.java
+C:\Users\Bruger\Desktop\studypoint test opgaver\TestAssignmentSemesterProjekt\src\main\java\database\LoginMapper.java
+C:\Users\Bruger\Desktop\studypoint test opgaver\TestAssignmentSemesterProjekt\src\main\java\database\TestDataSource.java
+C:\Users\Bruger\Desktop\studypoint test opgaver\TestAssignmentSemesterProjekt\src\main\java\database\CourseMapper.java
+C:\Users\Bruger\Desktop\studypoint test opgaver\TestAssignmentSemesterProjekt\src\main\java\interfaces\semesterFunctions.java
+C:\Users\Bruger\Desktop\studypoint test opgaver\TestAssignmentSemesterProjekt\src\main\java\database\StudentMapper.java
+C:\Users\Bruger\Desktop\studypoint test opgaver\TestAssignmentSemesterProjekt\src\main\java\entity\Course.java
+C:\Users\Bruger\Desktop\studypoint test opgaver\TestAssignmentSemesterProjekt\src\main\java\database\MainMapper.java
+C:\Users\Bruger\Desktop\studypoint test opgaver\TestAssignmentSemesterProjekt\src\main\java\entity\Semester.java
+C:\Users\Bruger\Desktop\studypoint test opgaver\TestAssignmentSemesterProjekt\src\main\java\database\DatabaseConnector.java
+C:\Users\Bruger\Desktop\studypoint test opgaver\TestAssignmentSemesterProjekt\src\main\java\entity\User.java
+C:\Users\Bruger\Desktop\studypoint test opgaver\TestAssignmentSemesterProjekt\src\main\java\entity\Student.java
+C:\Users\Bruger\Desktop\studypoint test opgaver\TestAssignmentSemesterProjekt\src\main\java\entity\Teacher.java
+C:\Users\Bruger\Desktop\studypoint test opgaver\TestAssignmentSemesterProjekt\src\main\java\interfaces\TeacherFunctions.java

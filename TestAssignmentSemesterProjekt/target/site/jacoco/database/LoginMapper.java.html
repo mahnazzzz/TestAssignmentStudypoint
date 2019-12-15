@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>LoginMapper.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">SemesterProjectTestM</a> &gt; <a href="index.source.html" class="el_package">database</a> &gt; <span class="el_source">LoginMapper.java</span></div><h1>LoginMapper.java</h1><pre class="source lang-java linenums">
+package database;
+
+import entity.User;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.ArrayList;
+import javax.sql.DataSource;
+
+
+<span class="fc" id="L12">public class LoginMapper {</span>
+
+   
+
+<span class="fc" id="L16">    private DatabaseConnector dbc = new DatabaseConnector();</span>
+    
+
+    public void setDataSource(DataSource datasource) {
+
+<span class="fc" id="L21">            dbc.setDataSource(datasource);</span>
+
+<span class="fc" id="L23">    }</span>
+    public User getUser(String userName, String password) throws SQLException {
+<span class="nc" id="L25">        dbc.open();</span>
+<span class="nc" id="L26">        String sql = &quot;select * from User WHERE userName = ? and password = ?&quot;;</span>
+<span class="nc" id="L27">        PreparedStatement pstmt = dbc.preparedStatement(sql);</span>
+<span class="nc" id="L28">        pstmt.setString(1, userName);</span>
+<span class="nc" id="L29">        pstmt.setString(2, password);</span>
+<span class="nc" id="L30">        ResultSet rs = pstmt.executeQuery();</span>
+<span class="nc" id="L31">         User user = new User();</span>
+<span class="nc bnc" id="L32" title="All 2 branches missed.">        while (rs.next()) {</span>
+<span class="nc" id="L33">            userName = rs.getString(&quot;userName&quot;);</span>
+<span class="nc" id="L34">            password = rs.getString(&quot;password&quot;);</span>
+<span class="nc" id="L35">            String who = rs.getString(&quot;who&quot;);</span>
+           
+<span class="nc" id="L37">            user.setUserName(userName);</span>
+<span class="nc" id="L38">            user.setPassword(password);</span>
+<span class="nc" id="L39">            user.setWho(who);</span>
+<span class="nc" id="L40">            return user;</span>
+        }
+<span class="nc" id="L42">        return user;</span>
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.2.201808211720</span></div></body></html>

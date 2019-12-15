@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>CourseMapper.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">SemesterProjectTestM</a> &gt; <a href="index.source.html" class="el_package">database</a> &gt; <span class="el_source">CourseMapper.java</span></div><h1>CourseMapper.java</h1><pre class="source lang-java linenums">package database;
+
+import entity.Course;
+import entity.Student;
+import entity.Teacher;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.List;
+
+public class CourseMapper {
+
+<span class="fc" id="L15">    private DatabaseConnector dbc = new DatabaseConnector();</span>
+<span class="fc" id="L16">    public List&lt;Course&gt; courses = new ArrayList();</span>
+
+<span class="fc" id="L18">    public CourseMapper() {</span>
+<span class="fc" id="L19">        dbc.setDataSource(new ReallyDataSource().getDataSource());</span>
+<span class="fc" id="L20">        courses.add(new Course(1, &quot;system integration&quot;, new Teacher(&quot;Anne&quot;, &quot;It&quot;, null)));</span>
+<span class="fc" id="L21">        courses.add(new Course(2, &quot;Test&quot;, new Teacher(&quot;Casper&quot;, &quot;Software&quot;, null)));</span>
+<span class="fc" id="L22">        courses.add(new Course(3, &quot;Databases&quot;, new Teacher(&quot;Hans&quot;, &quot;Data&quot;, null)));</span>
+<span class="fc" id="L23">        courses.add(new Course(4, &quot;Machinlearning&quot;, new Teacher(&quot;Anne&quot;, &quot;It&quot;, null)));</span>
+<span class="fc" id="L24">        courses.add(new Course(5, &quot;Big system&quot;, new Teacher(&quot;Alice&quot;, &quot;Software&quot;, null)));</span>
+<span class="fc" id="L25">        courses.add(new Course(6, &quot;Databases&quot;, new Teacher(&quot;Peter&quot;, &quot;Data&quot;, null)));</span>
+<span class="fc" id="L26">    }</span>
+
+    public List&lt;Course&gt; getCourses() throws ClassNotFoundException, SQLException {
+<span class="nc" id="L29">        List&lt;Course&gt; courses = new ArrayList();</span>
+
+        try {
+<span class="nc" id="L32">            dbc.open();</span>
+
+<span class="nc" id="L34">            String sqlCourse = &quot;SELECT * FROM course&quot;;</span>
+
+<span class="nc" id="L36">            PreparedStatement pstmt = dbc.preparedStatement(sqlCourse);</span>
+<span class="nc" id="L37">            ResultSet rs = pstmt.executeQuery();</span>
+
+<span class="nc bnc" id="L39" title="All 2 branches missed.">            while (rs.next()) {</span>
+<span class="nc" id="L40">                Course course = new Course();</span>
+
+<span class="nc" id="L42">                int id = rs.getInt(&quot;id&quot;);</span>
+<span class="nc" id="L43">                int teacherId = rs.getInt(&quot;teacherId&quot;);</span>
+<span class="nc" id="L44">                int semesterId = rs.getInt(&quot;semesterId&quot;);</span>
+<span class="nc" id="L45">                String subject = rs.getString(&quot;subject&quot;);</span>
+
+<span class="nc" id="L47">                course.setId(id);</span>
+
+<span class="nc" id="L49">                course.setTeacher(getTeacherbyId(teacherId));</span>
+<span class="nc" id="L50">                course.setSubject(subject);</span>
+
+                //  course.setTeacher(teacherId);
+<span class="nc" id="L53">                courses.add(course);</span>
+
+<span class="nc" id="L55">            }</span>
+<span class="nc bnc" id="L56" title="All 2 branches missed.">            for (Course course : courses) {</span>
+<span class="nc" id="L57">                System.out.println(course.getId());</span>
+<span class="nc" id="L58">            }</span>
+
+<span class="nc" id="L60">            rs.close();</span>
+<span class="nc" id="L61">            pstmt.close();</span>
+<span class="nc" id="L62">        } catch (SQLException ex) {</span>
+<span class="nc" id="L63">            ex.printStackTrace();</span>
+        } finally {
+<span class="nc" id="L65">            dbc.close();</span>
+        }
+<span class="nc" id="L67">        return courses;</span>
+
+    }
+
+    public Teacher getTeacherbyId(int id) {
+
+<span class="fc" id="L73">        Teacher t = new Teacher();</span>
+        try {
+<span class="fc" id="L75">            dbc.open();</span>
+
+<span class="fc" id="L77">            String sqlTecher = &quot;select * from Teacher WHERE teacherId = ?&quot;;</span>
+<span class="nc" id="L78">            PreparedStatement pstmt = dbc.preparedStatement(sqlTecher);</span>
+<span class="nc" id="L79">            pstmt.setInt(1, id);</span>
+<span class="nc" id="L80">            ResultSet rs = pstmt.executeQuery();</span>
+
+<span class="nc bnc" id="L82" title="All 2 branches missed.">            while (rs.next()) {</span>
+
+<span class="nc" id="L84">                int idT = rs.getInt(&quot;id&quot;);</span>
+<span class="nc" id="L85">                int userId = rs.getInt(&quot;userId&quot;);</span>
+<span class="nc" id="L86">                String subject = rs.getString(&quot;subject&quot;);</span>
+<span class="nc" id="L87">                String date = rs.getString(&quot;currentDate&quot;);</span>
+
+<span class="nc" id="L89">                getStudentbyId(userId);</span>
+<span class="nc" id="L90">                t.setId(id);</span>
+<span class="nc" id="L91">                t.setCurrentDate(LocalDate.MIN);</span>
+<span class="nc" id="L92">                t.setEducation(date);</span>
+              
+
+<span class="nc" id="L95">            }</span>
+<span class="nc" id="L96">            rs.close();</span>
+<span class="nc" id="L97">            pstmt.close();</span>
+<span class="nc" id="L98">        } catch (SQLException ex) {</span>
+<span class="nc" id="L99">            ex.printStackTrace();</span>
+        } finally {
+<span class="fc" id="L101">            dbc.close();</span>
+        }
+<span class="nc" id="L103">        return t;</span>
+    }
+
+    public void deleteCourse(int id) {
+<span class="fc" id="L107">        Course dCourse = null;</span>
+
+<span class="fc bfc" id="L109" title="All 2 branches covered.">        for (Course course : courses) {</span>
+<span class="fc bfc" id="L110" title="All 2 branches covered.">            if (course.getId() == id) {</span>
+<span class="fc" id="L111">                dCourse = course;</span>
+            }
+<span class="fc" id="L113">        }</span>
+<span class="fc" id="L114">        courses.remove(dCourse);</span>
+<span class="fc" id="L115">    }</span>
+
+    public Student getStudentbyId(int id ) {
+
+<span class="fc" id="L119">        Student s = new Student();</span>
+        try {
+<span class="fc" id="L121">            dbc.open();</span>
+
+<span class="fc" id="L123">            String sqlStudent = &quot;select * from Student WHERE id = ?&quot;;</span>
+<span class="nc" id="L124">            PreparedStatement pstmt = dbc.preparedStatement(sqlStudent);</span>
+<span class="nc" id="L125">             pstmt.setInt(1, id);</span>
+<span class="nc" id="L126">            ResultSet rs = pstmt.executeQuery();</span>
+
+<span class="nc bnc" id="L128" title="All 2 branches missed.">            while (rs.next()) {</span>
+
+<span class="nc" id="L130">                int userId = rs.getInt(&quot;userId&quot;);</span>
+<span class="nc" id="L131">                int courseId = rs.getInt(&quot;courseId&quot;);</span>
+<span class="nc" id="L132">                int age = rs.getInt(&quot;currentDate&quot;);</span>
+
+<span class="nc" id="L134">                s.setAge(age);</span>
+               
+              
+<span class="nc" id="L137">            }</span>
+
+<span class="nc" id="L139">            rs.close();</span>
+<span class="nc" id="L140">            pstmt.close();</span>
+<span class="nc" id="L141">        } catch (SQLException ex) {</span>
+<span class="nc" id="L142">            ex.printStackTrace();</span>
+        } finally {
+<span class="fc" id="L144">            dbc.close();</span>
+        }
+<span class="nc" id="L146">        return s;</span>
+    }
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.2.201808211720</span></div></body></html>
