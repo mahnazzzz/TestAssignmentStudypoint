@@ -17,7 +17,7 @@ you can finde assignment discription [her](https://github.com/datsoftlyngby/soft
 | condition   |          |   | |
 |----------|:-------------:|------:|------: |
 | New customer |  T | F | F |
-| has valid loyalty card |   T  |  T  |  |
+| has valid loyalty card |   T  |  T  | T |
 |has coupon | T |  F   | T |
 |has discount |0.15  | 0.10   | 0.20 |
 
