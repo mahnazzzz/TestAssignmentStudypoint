@@ -11,3 +11,9 @@ you can finde assignment discription [her](https://github.com/datsoftlyngby/soft
 | 0 |  100  | 
 | 100 | 1000 | 
 | 1000 |+∞ |
+
+## Test program
+![Capture](https://user-images.githubusercontent.com/20173643/70870347-80835b80-1f92-11ea-82a6-a353cbc3075c.PNG)
+## Run program
+![Program](https://user-images.githubusercontent.com/20173643/70870348-824d1f00-1f92-11ea-94d3-68d2deb68580.PNG)
+
